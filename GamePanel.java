@@ -40,9 +40,6 @@ public class GamePanel extends JPanel implements ActionListener
 		this.setBorder(BorderFactory.createLineBorder(Color.RED, 3));
 		this.setFocusable(true);
 		this.addKeyListener(new MyKeyAdapter());
-		apple = new Apple();
-		apple.color = Color.RED;
-
 		startGame();
 	}
 
@@ -50,6 +47,8 @@ public class GamePanel extends JPanel implements ActionListener
 		running = true;
 		snake = new Snake(GAME_UNITS);
 		snake.direction = 'R';
+		apple = new Apple();
+		apple.color = Color.RED;
 		apple.newApple();
 		timer = new Timer(INITIAL_DELAY, this);
 		timer.start();
